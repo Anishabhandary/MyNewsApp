@@ -16,8 +16,11 @@ const News = (props) => {
   useEffect(() => {
     document.title = `NewsDaily|${capitalizeTitle(props.category)}`;
     props.setProgress(10);
-    let url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apiKey}&page=${page}&pageSize=${props.pageSize}`;
+    let url = `https://gnews.io/api/v4/top-headlines?country=${props.country}&category=${props.category}&apikey=${props.apiKey}&page=${page}&pageSize=${props.pageSize}`;
     setLoading(true);
+    // let url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apiKey}&page=${page}&pageSize=${props.pageSize}`;
+    // setLoading(true);
+    //https://newsapi.org/v2/top-headlines?country=India&category=business&apiKey=d7486b4b71764dfbb783de6884d03f5e
     // props.setProgress(30);
     fetch(url).then((res) => {
       res.json().then((result) => {
@@ -33,9 +36,9 @@ const News = (props) => {
 
   const handlePrevClick = () => {
     props.setProgress(10);
-    let url = `https://newsapi.org/v2/top-headlines?country=${
+    let url = `https://gnews.io/api/v4/top-headlines?country=${
       props.country
-    }&category=${props.category}&apiKey=${props.apiKey}&page=${
+    }&category=${props.category}&apikey=${props.apiKey}&page=${
       page - 1
     }&pageSize=${props.pageSize}`;
     setLoading(true);
@@ -53,9 +56,9 @@ const News = (props) => {
     props.setProgress(10);
     if (page + 1 > Math.ceil(totalResults / props.pageSize)) {
     } else {
-      let url = `https://newsapi.org/v2/top-headlines?country=${
+      let url = `https://gnews.io/api/v4/top-headlines?country=${
         props.country
-      }&category=${props.category}&apiKey=${props.apiKey}&page=${
+      }&category=${props.category}&apikey=${props.apiKey}&page=${
         page + 1
       }&pageSize=${props.pageSize}`;
       setLoading(true);
@@ -95,8 +98,8 @@ const News = (props) => {
                       publishedAt={element.publishedAt}
                       source={element.source.name}
                       imgUrl={
-                        element.urlToImage
-                          ? element.urlToImage
+                        element.image
+                          ? element.image
                           : "https://imgs.search.brave.com/GSlXkhNqfuj2CMM5a6N4MgX2OA-V2EiOLVnHrW3Hetc/rs:fit:500:0:0/g:ce/aHR0cHM6Ly90NC5m/dGNkbi5uZXQvanBn/LzAzLzAzLzMyLzI5/LzM2MF9GXzMwMzMy/Mjk5NV9VY3FDT1lR/VzF1a05ma3BNVzBu/R0l2eGlpSGhGR2Uw/Yi5qcGc"
                       }
                       newUrl={element.url}

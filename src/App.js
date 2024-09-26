@@ -25,7 +25,7 @@ const App = () => {
                 apiKey={apiKey}
                 key="general"
                 pageSize="15"
-                country="in"
+                country="us"
                 category="general"
               />
             }
@@ -39,7 +39,7 @@ const App = () => {
                 apiKey={apiKey}
                 key="business"
                 pageSize="15"
-                country="in"
+                country="us"
                 category="business"
               />
             }
@@ -53,7 +53,7 @@ const App = () => {
                 apiKey={apiKey}
                 key="entertainment"
                 pageSize="15"
-                country="in"
+                country="us"
                 category="entertainment"
               />
             }
@@ -67,7 +67,7 @@ const App = () => {
                 apiKey={apiKey}
                 key="health"
                 pageSize="15"
-                country="in"
+                country="us"
                 category="health"
               />
             }
@@ -81,7 +81,7 @@ const App = () => {
                 apiKey={apiKey}
                 key="science"
                 pageSize="15"
-                country="in"
+                country="us"
                 category="science"
               />
             }
@@ -95,7 +95,7 @@ const App = () => {
                 apiKey={apiKey}
                 key="sports"
                 pageSize="15"
-                country="in"
+                country="us"
                 category="sports"
               />
             }
@@ -109,7 +109,7 @@ const App = () => {
                 apiKey={apiKey}
                 key="technology"
                 pageSize="15"
-                country="in"
+                country="us"
                 category="technology"
               />
             }
